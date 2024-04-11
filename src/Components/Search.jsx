@@ -3,6 +3,14 @@ import axios from "axios";
 import styles from "./Search.module.css";
 import { FaSearch } from "react-icons/fa";
 import Button from "./Button";
+import CardSearch from "./CardSearch";
+import {
+  faUserDoctor,
+  faHospital,
+  faAmbulance,
+  faClinicMedical,
+  faPills,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Search() {
   const [states, setStates] = useState([]);
@@ -75,6 +83,13 @@ function Search() {
           <span className="fade"> {selectedState}</span>
         </h2>
       )}
+      <div className={styles.cards}>
+        <CardSearch icon={faUserDoctor} text="Doctors" link="/find-doctors" />
+        <CardSearch icon={faClinicMedical} text="Labs" />
+        <CardSearch icon={faHospital} text="Hospitals" />
+        <CardSearch icon={faPills} text="Medical Store" />
+        <CardSearch icon={faAmbulance} text="Ambulance" />
+      </div>
     </div>
   );
 }

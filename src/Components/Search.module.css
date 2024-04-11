@@ -53,3 +53,8 @@
 .text {
   text-align: center;
 }
+
+.cards {
+  display: flex;
+  align-items: center;
+}
