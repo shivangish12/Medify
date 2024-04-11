@@ -3,7 +3,6 @@ import hero from "../assets/Hero.svg";
 import styles from "./Hero.module.css";
 import Navbar from "./Navbar";
 import Button from "./Button";
-import Search from "./Search";
 
 const Hero = () => {
   return (
