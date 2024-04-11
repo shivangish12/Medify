@@ -3,7 +3,7 @@
   height: 832px;
   top: 40px;
   gap: 0px;
-  opacity: 0px;
+
   background: linear-gradient(
     81deg,
     #e7f0ff 9.01%,
@@ -40,7 +40,7 @@
   opacity: 0px;
 }
 h3 {
-  font-family: Poppins;
+  font-family: "Poppins";
   font-size: 31px;
   font-weight: 600;
   line-height: 68px;
@@ -48,7 +48,7 @@ h3 {
   text-align: left;
 }
 p {
-  font-family: Poppins;
+  font-family: "Poppins";
   font-size: 20px;
   font-weight: 400;
   line-height: 32px;
@@ -65,7 +65,7 @@ p {
   opacity: 0px;
 }
 .medical {
-  font-family: Poppins;
+  font-family: "Poppins";
   font-size: 56px;
   font-weight: 700;
   line-height: 68px;
