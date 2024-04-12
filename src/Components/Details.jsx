@@ -23,6 +23,7 @@ function Details() {
                 className={styles.cardsH}
                 key={index}
                 hospital={item["Hospital Name"]}
+                address={item["Address"]}
                 city={item["City"]}
               />
             ))}
