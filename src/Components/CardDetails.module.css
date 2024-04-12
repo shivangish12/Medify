@@ -1,0 +1,30 @@
+.cardDetailsContainer {
+  width: 786px;
+  height: 269px;
+  top: 480px;
+  left: 130px;
+  padding: 0px 0.44px 0.62px 0px;
+  border: 1px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  top: 39px;
+  left: 30px;
+  color: #2aa7ff;
+}
+
+.hospitalName {
+  color: #14bef0;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+}

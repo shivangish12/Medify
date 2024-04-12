@@ -6,17 +6,19 @@ import Button from "./Button";
 import CardSearch from "./CardSearch";
 import {
   faUserDoctor,
-  faHospital,
-  faAmbulance,
   faClinicMedical,
+  faHospital,
   faPills,
+  faAmbulance,
 } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 function Search() {
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
+  const navigate = useNavigate(); // Corrected the variable name
 
   useEffect(() => {
     axios
@@ -36,6 +38,20 @@ function Search() {
         .catch((err) => console.error("Error fetching cities:", err));
     }
   }, [selectedState]);
+
+  const handleSearch = () => {
+    if (selectedState && selectedCity) {
+      axios
+        .get(
+          `https://meddata-backend.onrender.com/data?state=${selectedState}&city=${selectedCity}`
+        )
+        .then((res) => {
+          // Navigate to the search result page
+          navigate("/details", { state: { searchResult: res.data } }); // Corrected the object structure
+        })
+        .catch((err) => console.error("Error fetching search result:", err));
+    }
+  };
 
   return (
     <div className={styles.searchContainer}>
@@ -74,19 +90,13 @@ function Search() {
             ))}
           </select>
         </div>
-        <Button name={"Search"} />
+        <Button name={"Search"} onClick={handleSearch} />
       </div>
       <h3 className={styles.text}>You may be looking for</h3>
-      {selectedCity && (
-        <h2 className="result">
-          You selected <span className="highlight">{selectedCity},</span>
-          <span className="fade"> {selectedState}</span>
-        </h2>
-      )}
       <div className={styles.cards}>
         <CardSearch icon={faUserDoctor} text="Doctors" link="/find-doctors" />
         <CardSearch icon={faClinicMedical} text="Labs" />
-        <CardSearch icon={faHospital} text="Hospitals" />
+        <CardSearch icon={faHospital} text="Hospitals" link="/details" />
         <CardSearch icon={faPills} text="Medical Store" />
         <CardSearch icon={faAmbulance} text="Ambulance" />
       </div>

@@ -12,7 +12,7 @@ const Navbar = () => {
           <a href="#find-doctors">Find Doctors</a>
         </li>
         <li>
-          <a href="#hospitals">Hospitals</a>
+          <a href="/details">Hospitals</a>
         </li>
         <li>
           <a href="#medicines">Medicines</a>
