@@ -20,11 +20,11 @@ function Details() {
           {searchResult &&
             searchResult.map((item, index) => (
               <CardDetails
-                className={styles.cardsH}
                 key={index}
                 hospital={item["Hospital Name"]}
                 address={item["Address"]}
                 city={item["City"]}
+                state={item["State"]}
               />
             ))}
         </div>
