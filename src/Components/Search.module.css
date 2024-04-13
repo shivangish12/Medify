@@ -1,7 +1,7 @@
 .searchContainer {
   position: absolute;
   bottom: 0;
-  left: 135px;
+  margin-left: 135px;
   top: 530px;
   width: 1170px;
   height: 429px;
@@ -15,6 +15,12 @@
   justify-content: space-around;
   align-items: center;
   padding-top: 30px;
+  width: 1166px;
+  height: 110px;
+  gap: 29px;
+  border-radius: 15px;
+  background-color: #fafbfe;
+  box-shadow: 6px 6px 35px 0px #1028511c;
 }
 .customSelect {
   width: 285px;

@@ -5,7 +5,7 @@ import Button from "./Button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function SearchSection() {
+function SearchSection({ customStyle }) {
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
   const [selectedState, setSelectedState] = useState("");
@@ -45,7 +45,7 @@ function SearchSection() {
   };
 
   return (
-    <div className={styles.search}>
+    <div className={styles.search} style={customStyle}>
       <div className={styles.customSelect}>
         <FaSearch className={styles.searchIcon} />
         <select

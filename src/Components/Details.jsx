@@ -12,7 +12,11 @@ function Details() {
   return (
     <div className={styles.detailsPage}>
       <Navbar />
-      <SearchSection searchResult={searchResult} />{" "}
+      <SearchSection
+        searchResult={searchResult}
+        customStyle={{ marginLeft: "150px" }}
+      />
+
       <div>
         <h3 className={styles.heading}>Medical Centers</h3>
         <p className={styles.d}>
