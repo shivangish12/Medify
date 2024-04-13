@@ -3,8 +3,13 @@ import hero from "../assets/Hero.svg";
 import styles from "./Hero.module.css";
 import Navbar from "./Navbar";
 import Button from "./Button";
-
+import { useNavigate } from "react-router-dom";
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleFindCenters = () => {
+    navigate("/details");
+  };
   return (
     <div className={styles.container}>
       <Navbar />
@@ -28,7 +33,7 @@ const Hero = () => {
             </div>
           </div>
           <div className={styles.btn}>
-            <Button name={"Find Centers"} />
+            <Button name={"Find Centers"} onClick={handleFindCenters} />
           </div>
         </div>
         <div className={styles.heroImg}>

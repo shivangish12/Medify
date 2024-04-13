@@ -2,11 +2,14 @@ import React from "react";
 import styles from "./Navbar.module.css";
 import logoImage from "../assets/Logo.svg";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <img src={logoImage} alt="Logo" />
+      <Link to="/">
+        <img src={logoImage} alt="Logo" />
+      </Link>
       <ul>
         <li>
           <a href="#find-doctors">Find Doctors</a>
