@@ -22,7 +22,11 @@ const CardDetails = ({ key, hospital, city, address, state }) => {
           <p className={styles.cityName}>{city}</p>
           <p>{state}</p>
         </div>
-        <Button name={"Book FREE Center Visit"} onClick={toggleCalendar} />
+        <Button
+          name={"Book FREE Center Visit"}
+          onClick={toggleCalendar}
+          forDetailsStyle={{ width: "212px" }}
+        />
         {showCalendar && <Calendar onSelectDate={toggleCalendar} />}
       </div>
     </div>
