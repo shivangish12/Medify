@@ -1,0 +1,37 @@
+.footer {
+  width: 100%;
+  height: 424px;
+  top: 6215px;
+  padding: 40px 135px 30px 162px;
+  background-color: #1b3c74;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer p {
+  width: 1143px;
+  height: 28px;
+  top: 31px;
+  padding: 0px 645px 0px 0px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+}
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  color: white;
+}

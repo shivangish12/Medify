@@ -2,9 +2,14 @@ import React from "react";
 import styles from "./Navbar.module.css";
 import logoImage from "../assets/Logo.svg";
 import Button from "./Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleBookings = () => {
+    navigate("/mybookings");
+  };
   return (
     <nav className={styles.navbar}>
       <Link to="/">
@@ -30,7 +35,7 @@ const Navbar = () => {
           <a href="#medicines">Facilities</a>
         </li>
         <li>
-          <Button name={"My Bookings"} />
+          <Button name={"My Bookings"} onClick={handleBookings} />
         </li>
       </ul>
     </nav>

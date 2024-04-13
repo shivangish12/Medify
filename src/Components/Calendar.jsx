@@ -1,3 +1,4 @@
+// Calendar.jsx
 import React, { useState } from "react";
 import styles from "./Calendar.module.css";
 import Button from "./Button";
@@ -5,6 +6,7 @@ import Button from "./Button";
 function Calendar({ value, onChange }) {
   const [date, setDate] = useState(value?.split("T")[0] || "");
   const [time, setTime] = useState(value?.split("T")[1]?.substring(0, 5) || "");
+  const [selectedDateTime, setSelectedDateTime] = useState(null);
 
   const handleDateChange = (event) => {
     const { value } = event.target;
@@ -17,7 +19,9 @@ function Calendar({ value, onChange }) {
   };
 
   const handleConfirm = () => {
-    onChange(`${date} ${time}`);
+    const dateTime = `${date} ${time}`;
+    setSelectedDateTime(dateTime);
+    onChange(dateTime);
   };
 
   return (
@@ -38,7 +42,7 @@ function Calendar({ value, onChange }) {
         autoComplete="off"
         className={styles.customtimeinput}
       />
-      <Button onClick={handleConfirm} name={"Confirm"}></Button>
+      <Button onClick={handleConfirm} name={"Confirm"} />
     </div>
   );
 }

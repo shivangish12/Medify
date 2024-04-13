@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import CardDetails from "./CardDetails";
 import Navbar from "./Navbar";
 import styles from "./Details.module.css";
 import SearchSection from "./SearchSection";
+import Footer from "./Footer";
 
 function Details() {
   const location = useLocation();
-  const searchResult = location?.state?.searchResult || []; // Provide a default empty array if searchResult is undefined
+  const searchResult = location?.state?.searchResult || [];
+
+  const [bookings, setBookings] = useState([]);
+
+  const handleBooking = (bookingData) => {
+    setBookings((prevBookings) => [...prevBookings, bookingData]);
+  };
 
   return (
     <div className={styles.detailsPage}>
@@ -30,10 +37,13 @@ function Details() {
               address={item["Address"]}
               city={item["City"]}
               state={item["State"]}
+              dateTime={item["DateTime"]}
+              onBook={handleBooking}
             />
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHospital } from "@fortawesome/free-solid-svg-icons";
 import Calendar from "./Calendar";
 
-const CardDetails = ({ hospital, city, address, state }) => {
+const CardDetails = ({ hospital, city, address, state, dateTime }) => {
   const [showCalendar, setShowCalendar] = useState(false);
-  const [selectedDateTime, setSelectedDateTime] = useState(null);
+  const [selectedDateTime, setSelectedDateTime] = useState(dateTime);
 
   const toggleCalendar = () => {
     setShowCalendar((prev) => !prev);
@@ -27,6 +27,7 @@ const CardDetails = ({ hospital, city, address, state }) => {
           <p className={styles.address}>{address}</p>
           <p className={styles.cityName}>{city}</p>
           <p>{state}</p>
+          <p>{selectedDateTime}</p>
         </div>
         <Button
           name={"Book FREE Center Visit"}
@@ -40,4 +41,5 @@ const CardDetails = ({ hospital, city, address, state }) => {
     </div>
   );
 };
+
 export default CardDetails;
