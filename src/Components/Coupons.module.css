@@ -21,6 +21,6 @@
 }
 
 .swiper-slide {
-  flex-shrink: 0; /* Prevent slides from shrinking */
-  width: calc(100% / 3); /* Set the width of each slide */
+  flex-shrink: 0;
+  width: calc(100% / 3);
 }
