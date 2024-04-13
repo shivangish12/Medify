@@ -26,7 +26,7 @@
   justify-content: center;
   gap: 100px;
 }
-a {
+.textAnchor {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   font-size: 16px;

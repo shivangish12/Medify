@@ -13,53 +13,83 @@ const Footer = () => {
           <ul className={styles.list}>
             <div>
               <li>
-                <a href="/about">About Us</a>
+                <a href="/about" className={styles.textAnchor}>
+                  About Us
+                </a>
               </li>
               <li>
-                <a href="/pricing">Our Pricing</a>
+                <a href="/pricing" className={styles.textAnchor}>
+                  Our Pricing
+                </a>
               </li>
               <li>
-                <a href="/gallery">Our Gallery</a>
+                <a href="/gallery" className={styles.textAnchor}>
+                  Our Gallery
+                </a>
               </li>
               <li>
-                <a href="/appointment">Appointment</a>
+                <a href="/appointment" className={styles.textAnchor}>
+                  Appointment
+                </a>
               </li>
               <li>
-                <a href="/privacy">Privacy Policy</a>
-              </li>
-            </div>
-            <div>
-              <li>
-                <a href="/orthology">Orthology</a>
-              </li>
-              <li>
-                <a href="/neurology">Neurology</a>
-              </li>
-              <li>
-                <a href="/dentalcare">Dental Care</a>
-              </li>
-              <li>
-                <a href="/opthalmology">Opthalmology</a>
-              </li>
-              <li>
-                <a href="/cardiology">Cardiology</a>
+                <a href="/privacy" className={styles.textAnchor}>
+                  Privacy Policy
+                </a>
               </li>
             </div>
             <div>
               <li>
-                <a href="/about">About Us</a>
+                <a href="/orthology" className={styles.textAnchor}>
+                  Orthology
+                </a>
               </li>
               <li>
-                <a href="/pricing">Our Pricing</a>
+                <a href="/neurology" className={styles.textAnchor}>
+                  Neurology
+                </a>
               </li>
               <li>
-                <a href="/gallery">Our Gallery</a>
+                <a href="/dentalcare" className={styles.textAnchor}>
+                  Dental Care
+                </a>
               </li>
               <li>
-                <a href="/appointment">Appointment</a>
+                <a href="/opthalmology" className={styles.textAnchor}>
+                  Opthalmology
+                </a>
               </li>
               <li>
-                <a href="/privacy">Privacy Policy</a>
+                <a href="/cardiology" className={styles.textAnchor}>
+                  Cardiology
+                </a>
+              </li>
+            </div>
+            <div>
+              <li>
+                <a href="/about" className={styles.textAnchor}>
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="/pricing" className={styles.textAnchor}>
+                  Our Pricing
+                </a>
+              </li>
+              <li>
+                <a href="/gallery" className={styles.textAnchor}>
+                  Our Gallery
+                </a>
+              </li>
+              <li>
+                <a href="/appointment" className={styles.textAnchor}>
+                  Appointment
+                </a>
+              </li>
+              <li>
+                <a href="/privacy" className={styles.textAnchor}>
+                  Privacy Policy
+                </a>
               </li>
             </div>
           </ul>
