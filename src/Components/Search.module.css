@@ -1,13 +1,12 @@
 .searchContainer {
   position: absolute;
-  bottom: 0;
   margin-left: 135px;
   top: 530px;
   width: 1170px;
   height: 429px;
   background-color: #fff;
   padding: 20px;
-  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
   border-radius: 15px;
 }
 .search {
