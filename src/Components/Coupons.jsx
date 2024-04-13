@@ -14,7 +14,7 @@ const Coupons = () => {
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        spaceBetween={10}
+        spaceBetween={0}
         slidesPerView={3}
         className={styles.swiper}
       >

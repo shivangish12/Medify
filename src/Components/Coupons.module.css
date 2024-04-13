@@ -14,13 +14,27 @@
   margin-top: 40px;
 }
 
-.swiper-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
 .swiper-slide {
   flex-shrink: 0;
   width: calc(100% / 3);
+}
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: grey;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: blue;
 }
