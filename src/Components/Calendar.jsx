@@ -1,32 +1,44 @@
+// Calendar.jsx
+
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import styles from "./Calendar.module.css";
 
-const Calendar = ({ onSelectDate }) => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+function Calendar({ value, onChange }) {
+  const [date, setDate] = useState(value || "");
+  const [time, setTime] = useState("");
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
+  const handleDateChange = (event) => {
+    const { value } = event.target;
+    setDate(value);
+    onChange(value + " " + time); // Concatenate date and time
   };
 
-  const handleConfirm = () => {
-    onSelectDate(selectedDate);
+  const handleTimeChange = (event) => {
+    const { value } = event.target;
+    setTime(value);
+    onChange(date + " " + value); // Concatenate date and time
   };
 
   return (
-    <div>
-      <DatePicker
-        selected={selectedDate}
+    <div className={styles.datetimepicker}>
+      <input
+        type="date"
+        value={date}
         onChange={handleDateChange}
-        showTimeSelect
-        timeFormat="HH:mm"
-        timeIntervals={15}
-        timeCaption="Time"
-        dateFormat="MMMM d, yyyy h:mm aa"
+        placeholder="mm/dd/yyyy"
+        autoComplete="off"
+        className={styles.customdateinput}
       />
-      <button onClick={handleConfirm}>Confirm</button>
+      <input
+        type="time"
+        value={time}
+        onChange={handleTimeChange}
+        placeholder="hh:mm"
+        autoComplete="off"
+        className={styles.customtimeinput}
+      />
     </div>
   );
-};
+}
 
 export default Calendar;

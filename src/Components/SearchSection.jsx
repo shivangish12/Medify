@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import styles from "./Search.module.css";
-
-import CardSearch from "./CardSearch";
-import {
-  faUserDoctor,
-  faClinicMedical,
-  faHospital,
-  faPills,
-  faAmbulance,
-} from "@fortawesome/free-solid-svg-icons";
+import { FaSearch } from "react-icons/fa";
+import Button from "./Button";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import SearchSection from "./SearchSection";
 
-function Search() {
+function SearchSection() {
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
   const [selectedState, setSelectedState] = useState("");
@@ -53,26 +45,44 @@ function Search() {
   };
 
   return (
-    <div className={styles.searchContainer}>
-      <SearchSection
-        states={states}
-        cities={cities}
-        selectedState={selectedState}
-        selectedCity={selectedCity}
-        setSelectedState={setSelectedState}
-        setSelectedCity={setSelectedCity}
-        handleSearch={handleSearch}
-      />
-      <h3 className={styles.text}>You may be looking for</h3>
-      <div className={styles.cards}>
-        <CardSearch icon={faUserDoctor} text="Doctors" link="/find-doctors" />
-        <CardSearch icon={faClinicMedical} text="Labs" />
-        <CardSearch icon={faHospital} text="Hospitals" link="/details" />
-        <CardSearch icon={faPills} text="Medical Store" />
-        <CardSearch icon={faAmbulance} text="Ambulance" />
+    <div className={styles.search}>
+      <div className={styles.customSelect}>
+        <FaSearch className={styles.searchIcon} />
+        <select
+          className={styles.searchbox}
+          value={selectedState}
+          onChange={(e) => setSelectedState(e.target.value)}
+        >
+          <option value="" disabled>
+            State
+          </option>
+          {states.map((state) => (
+            <option key={state} value={state}>
+              {state}
+            </option>
+          ))}
+        </select>
       </div>
+      <div className={styles.customSelect}>
+        <FaSearch className={styles.searchIcon} />
+        <select
+          className={styles.searchbox}
+          value={selectedCity}
+          onChange={(e) => setSelectedCity(e.target.value)}
+        >
+          <option value="" disabled>
+            City
+          </option>
+          {cities.map((city) => (
+            <option key={city} value={city}>
+              {city}
+            </option>
+          ))}
+        </select>
+      </div>
+      <Button name={"Search"} onClick={handleSearch} />
     </div>
   );
 }
 
-export default Search;
+export default SearchSection;
