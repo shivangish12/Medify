@@ -5,15 +5,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHospital } from "@fortawesome/free-solid-svg-icons";
 import Calendar from "./Calendar";
 
-const CardDetails = ({ key, hospital, city, address, state }) => {
+const CardDetails = ({ hospital, city, address, state }) => {
   const [showCalendar, setShowCalendar] = useState(false);
+  const [selectedDateTime, setSelectedDateTime] = useState(null);
 
   const toggleCalendar = () => {
     setShowCalendar((prev) => !prev);
   };
+
+  const handleCalendarChange = (dateTime) => {
+    setSelectedDateTime(dateTime);
+    toggleCalendar(); // Close the calendar after selecting date/time
+  };
+
   return (
     <div>
-      <p>{key}</p>
       <div className={styles.cardDetailsContainer}>
         <FontAwesomeIcon className={styles.icon} icon={faHospital} />
         <div>
@@ -27,7 +33,9 @@ const CardDetails = ({ key, hospital, city, address, state }) => {
           onClick={toggleCalendar}
           forDetailsStyle={{ width: "212px" }}
         />
-        {showCalendar && <Calendar onSelectDate={toggleCalendar} />}
+        {showCalendar && (
+          <Calendar value={selectedDateTime} onChange={handleCalendarChange} />
+        )}
       </div>
     </div>
   );

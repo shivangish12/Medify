@@ -1,22 +1,23 @@
-// Calendar.jsx
-
 import React, { useState } from "react";
 import styles from "./Calendar.module.css";
+import Button from "./Button";
 
 function Calendar({ value, onChange }) {
-  const [date, setDate] = useState(value || "");
-  const [time, setTime] = useState("");
+  const [date, setDate] = useState(value?.split("T")[0] || "");
+  const [time, setTime] = useState(value?.split("T")[1]?.substring(0, 5) || "");
 
   const handleDateChange = (event) => {
     const { value } = event.target;
     setDate(value);
-    onChange(value + " " + time); // Concatenate date and time
   };
 
   const handleTimeChange = (event) => {
     const { value } = event.target;
     setTime(value);
-    onChange(date + " " + value); // Concatenate date and time
+  };
+
+  const handleConfirm = () => {
+    onChange(`${date} ${time}`);
   };
 
   return (
@@ -37,6 +38,7 @@ function Calendar({ value, onChange }) {
         autoComplete="off"
         className={styles.customtimeinput}
       />
+      <Button onClick={handleConfirm} name={"Confirm"}></Button>
     </div>
   );
 }
